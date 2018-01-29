@@ -12,6 +12,8 @@ class RepoListView extends SelectListView
         @panel.show()
         @setItems(@listOfItems)
         @focusFilterEditor()
+        if @listOfItems?.length == 1
+          @confirmed(@listOfItems[0])
 
     getFilterKey: ->
         'repo_name'
